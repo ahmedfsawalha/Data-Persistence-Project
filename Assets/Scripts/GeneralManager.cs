@@ -99,4 +99,14 @@ public class GeneralManager : MonoBehaviour
         }
     }
 
+    public void ResetBestScore()
+    {
+        bestPlayerName = "";
+        bestScore = 0;
+        if (bestScoreText != null)
+        {
+            bestScoreText.text = $"Best Score : {bestPlayerName} : {bestScore}";
+        }
+        PlayerPrefs.DeleteKey("BestScoreData");
+    }
 }
